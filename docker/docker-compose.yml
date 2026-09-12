@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:12-alpine
+    container_name: postgres_nestjs
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres_nestjs
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_nestjs:/var/lib/postgresql/data
+
+
+volumes:
+  postgres_nestjs:
